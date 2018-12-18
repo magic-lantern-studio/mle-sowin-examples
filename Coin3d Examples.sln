@@ -5,6 +5,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "HelloCone", "HelloCone\Hell
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "EmptyTest", "EmptyTest\EmptyTest.vcxproj", "{7DDFAA3D-8E42-4756-9244-24A403EC814D}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Teapot", "Teapot\Teapot.vcxproj", "{D7628D49-A7C9-4F25-99AC-A2649174A3B3}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Win32 = Debug|Win32
@@ -19,6 +21,10 @@ Global
 		{7DDFAA3D-8E42-4756-9244-24A403EC814D}.Debug|Win32.Build.0 = Debug|Win32
 		{7DDFAA3D-8E42-4756-9244-24A403EC814D}.Release|Win32.ActiveCfg = Release|Win32
 		{7DDFAA3D-8E42-4756-9244-24A403EC814D}.Release|Win32.Build.0 = Release|Win32
+		{D7628D49-A7C9-4F25-99AC-A2649174A3B3}.Debug|Win32.ActiveCfg = Debug|Win32
+		{D7628D49-A7C9-4F25-99AC-A2649174A3B3}.Debug|Win32.Build.0 = Debug|Win32
+		{D7628D49-A7C9-4F25-99AC-A2649174A3B3}.Release|Win32.ActiveCfg = Release|Win32
+		{D7628D49-A7C9-4F25-99AC-A2649174A3B3}.Release|Win32.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
