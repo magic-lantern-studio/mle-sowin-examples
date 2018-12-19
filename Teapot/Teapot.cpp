@@ -37,6 +37,27 @@
 #include <Inventor/nodes/SoSeparator.h>
 #include <Inventor/nodes/SoCone.h>
 
+SoSeparator *
+readFile(const char *filename)
+{
+   // Open the input file.
+   SoInput sceneInput;
+   if (! sceneInput.openFile(filename)) {
+      fprintf(stderr, "Cannot open file %s.\n", filename);
+      return NULL;
+   }
+
+   // Read the whole file into the database.
+   SoSeparator *root = SoDB::readAll(&sceneInput);
+   if (root == NULL) {
+      fprintf(stderr, "Problem reading file.\n");
+      return NULL;
+   } 
+
+   sceneInput.closeFile();
+   return root;
+}
+
 int
 main(int, char ** argv)
 {
@@ -47,13 +68,14 @@ main(int, char ** argv)
 	// Create a viewer.
     SoWinExaminerViewer * viewer = new SoWinExaminerViewer(window);
 
-	// The scenegraph is going to consist of two nodes: the root and a geometry object. First create the two nodes and
-	// then add the geometry node as a child to the root node. To avoid that the root object gets deleted (because its reference counter is 0),
-	// call ref() on the root node.
-    SoSeparator * root = new SoSeparator;
-    SoCone * cone = new SoCone;
-    root->ref();
-    root->addChild(cone);
+	// The scenegraph is going to consist of the data and node hierarchy defined by the Open Inventor file, teapot.iv.
+	// To avoid that the root object gets deleted (because its reference counter is 0), call ref() on the root node.
+    SoSeparator * root = readFile("../media/teapot.iv");
+	if (root == NULL) {
+		delete viewer;
+		exit(1);
+	}
+	root->ref();
 
 	// Tell the viewer to render the scenegraph (which is represented through the root node).
     viewer->setSceneGraph(root);
