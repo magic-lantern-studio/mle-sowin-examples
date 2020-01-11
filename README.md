@@ -1,4 +1,4 @@
-# coin3d-sowin-examples
+# mle-sowin-examples
 Coin3D examples using the SoWin GUI
 
 The following examples are available:
