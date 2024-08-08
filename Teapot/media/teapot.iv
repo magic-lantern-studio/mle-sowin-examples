@@ -13,7 +13,7 @@ Separator {
 	    transparency	0
 	}
 	DEF +1 Texture2 {
-	    filename	"../media/mandrill.rgb"
+	    filename	"media/mandrill.rgb"
 	}
 	IndexedFaceSet {
 	    vertexProperty		    VertexProperty {

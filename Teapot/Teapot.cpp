@@ -70,7 +70,7 @@ main(int, char ** argv)
 
 	// The scenegraph is going to consist of the data and node hierarchy defined by the Open Inventor file, teapot.iv.
 	// To avoid that the root object gets deleted (because its reference counter is 0), call ref() on the root node.
-    SoSeparator * root = readFile("../media/teapot.iv");
+    SoSeparator * root = readFile("media/teapot.iv");
 	if (root == NULL) {
 		delete viewer;
 		exit(1);
